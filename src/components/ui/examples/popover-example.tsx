@@ -3,73 +3,30 @@ import CustomPopover from "@/components/ui/popover";
 import Button from "@/components/ui/button";
 
 export default function PopoverExample() {
-  const [popoverOpen, setPopoverOpen] = useState(false);
-
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-semibold dark:text-white">Popover</h2>
-      
+
       <div className="flex flex-wrap items-center gap-4">
         {/* 기본 Popover */}
-        <CustomPopover
-          trigger={
-            <Button variant="primary">
-              기본 Popover
-            </Button>
-          }
-          contentClassName="rounded-lg bg-white p-4 shadow-lg border border-gray-200 min-w-[200px] dark:bg-gray-800 dark:border-gray-700"
-        >
+        <CustomPopover trigger={<Button variant="outline">기본 Popover</Button>} contentClassName="rounded-lg bg-white p-4 shadow-lg border border-gray-200 min-w-[200px] dark:bg-gray-800 dark:border-gray-700">
           <div className="space-y-2">
             <h3 className="font-semibold dark:text-white">Popover 제목</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">이것은 기본 Popover 예제입니다.</p>
           </div>
         </CustomPopover>
 
-        {/* 제어 가능한 Popover */}
-        <CustomPopover
-          open={popoverOpen}
-          onOpenChange={setPopoverOpen}
-          trigger={
-            <Button variant="success">
-              제어 가능한 Popover
-            </Button>
-          }
-          contentClassName="rounded-lg bg-white p-4 shadow-lg border border-gray-200 min-w-[200px] dark:bg-gray-800 dark:border-gray-700"
-        >
-          <div className="space-y-2">
-            <h3 className="font-semibold dark:text-white">제어 가능한 Popover</h3>
-            <p className="text-sm text-gray-600 dark:text-gray-300">상태: {popoverOpen ? "열림" : "닫힘"}</p>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setPopoverOpen(false)}
-              className="mt-2"
-            >
-              닫기
-            </Button>
-          </div>
-        </CustomPopover>
-
         {/* 다른 위치의 Popover */}
-        <CustomPopover
-          side="right"
-          trigger={
-            <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900/20">
-              오른쪽 Popover
-            </Button>
-          }
-          contentClassName="rounded-lg bg-white p-4 shadow-lg border border-gray-200 min-w-[200px] dark:bg-gray-800 dark:border-gray-700"
-        >
+        <CustomPopover side="right" trigger={<Button variant="outline">오른쪽 Popover</Button>} contentClassName="rounded-lg bg-white p-4 shadow-lg border border-gray-200 min-w-[200px] dark:bg-gray-800 dark:border-gray-700">
           <div className="space-y-2">
             <h3 className="font-semibold dark:text-white">오른쪽에 표시</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">side="right"로 설정했습니다.</p>
           </div>
         </CustomPopover>
-
         {/* 커스텀 스타일 Popover */}
         <CustomPopover
           trigger={
-            <Button variant="danger">
+            <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900/20">
               커스텀 스타일
             </Button>
           }
@@ -92,4 +49,3 @@ export default function PopoverExample() {
     </div>
   );
 }
-

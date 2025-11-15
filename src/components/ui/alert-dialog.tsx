@@ -1,9 +1,10 @@
-import * as Dialog from "@radix-ui/react-dialog";
+import * as AlertDialog from "@radix-ui/react-alert-dialog";
 
-// Dialog.Close를 외부에서 사용할 수 있도록 export
-export const DialogClose = Dialog.Close;
+// AlertDialog 컴포넌트들을 외부에서 사용할 수 있도록 export
+export const AlertDialogAction = AlertDialog.Action;
+export const AlertDialogCancel = AlertDialog.Cancel;
 
-interface IDialogProps {
+interface IAlertDialogProps {
   trigger?: React.ReactNode;
   children: React.ReactNode;
   open?: boolean;
@@ -16,7 +17,7 @@ interface IDialogProps {
   triggerClassName?: string;
 }
 
-export default function CustomDialog({
+export default function CustomAlertDialog({
   trigger,
   children,
   open,
@@ -27,35 +28,35 @@ export default function CustomDialog({
   overlayClassName = "",
   contentClassName = "",
   triggerClassName = "",
-}: IDialogProps) {
+}: IAlertDialogProps) {
   return (
-    <Dialog.Root open={open} onOpenChange={onOpenChange}>
+    <AlertDialog.Root open={open} onOpenChange={onOpenChange}>
       {trigger && (
-        <Dialog.Trigger asChild className={triggerClassName}>
+        <AlertDialog.Trigger asChild className={triggerClassName}>
           {trigger}
-        </Dialog.Trigger>
+        </AlertDialog.Trigger>
       )}
-      <Dialog.Portal>
-        <Dialog.Overlay
+      <AlertDialog.Portal>
+        <AlertDialog.Overlay
           className={`fixed inset-0 bg-black/50 z-51 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 ${overlayClassName}`}
         />
-        <Dialog.Content
+        <AlertDialog.Content
           className={`fixed z-52 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg bg-white p-6 shadow-xl focus:outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] dark:bg-gray-800 ${contentClassName} ${className}`}
         >
           {title && (
-            <Dialog.Title className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
+            <AlertDialog.Title className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
               {title}
-            </Dialog.Title>
+            </AlertDialog.Title>
           )}
           {description && (
-            <Dialog.Description className="mb-4 text-md text-gray-600 dark:text-gray-300">
+            <AlertDialog.Description className="mb-4 text-sm text-gray-600 dark:text-gray-300">
               {description}
-            </Dialog.Description>
+            </AlertDialog.Description>
           )}
           {children}
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+        </AlertDialog.Content>
+      </AlertDialog.Portal>
+    </AlertDialog.Root>
   );
 }
 

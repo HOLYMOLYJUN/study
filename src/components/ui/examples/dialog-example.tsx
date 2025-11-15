@@ -3,7 +3,6 @@ import CustomDialog, { DialogClose } from "@/components/ui/dialog";
 import Button from "@/components/ui/button";
 
 export default function DialogExample() {
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
 
   return (
@@ -14,19 +13,16 @@ export default function DialogExample() {
         {/* 기본 Dialog */}
         <CustomDialog
           trigger={
-            <Button variant="primary">
+            <Button variant="outline">
               기본 Dialog
             </Button>
           }
-          title="기본 다이얼로그"
-          description="이것은 기본 Dialog 예제입니다."
           contentClassName="min-w-[400px]"
+          title="기본 Dialog"
+          description="Dialog는 모달 형태로 화면 중앙에 표시됩니다. 중요한 정보나 확인이 필요한 경우에 사용합니다."
         >
           <div className="space-y-4">
-            <p className="text-gray-600 dark:text-gray-300">
-              Dialog는 모달 형태로 화면 중앙에 표시됩니다. 중요한 정보나 확인이 필요한 경우에 사용합니다.
-            </p>
-            <div className="flex justify-end gap-2">
+            <div className="flex justify-center gap-2">
               <DialogClose asChild>
                 <Button variant="outline" size="sm">
                   취소
@@ -41,39 +37,12 @@ export default function DialogExample() {
           </div>
         </CustomDialog>
 
-        {/* 제어 가능한 Dialog */}
-        <CustomDialog
-          open={dialogOpen}
-          onOpenChange={setDialogOpen}
-          trigger={
-            <Button variant="success">
-              제어 가능한 Dialog
-            </Button>
-          }
-          title="제어 가능한 다이얼로그"
-          description="상태를 직접 제어할 수 있습니다."
-          contentClassName="min-w-[400px]"
-        >
-          <div className="space-y-4">
-            <p className="text-gray-600 dark:text-gray-300">
-              현재 상태: {dialogOpen ? "열림" : "닫힘"}
-            </p>
-            <div className="flex justify-end gap-2">
-              <DialogClose asChild>
-                <Button variant="outline" size="sm">
-                  닫기
-                </Button>
-              </DialogClose>
-            </div>
-          </div>
-        </CustomDialog>
-
         {/* 확인 Dialog */}
         <CustomDialog
           open={confirmDialogOpen}
           onOpenChange={setConfirmDialogOpen}
           trigger={
-            <Button variant="danger">
+            <Button variant="outline">
               확인 Dialog
             </Button>
           }
@@ -82,9 +51,6 @@ export default function DialogExample() {
           contentClassName="min-w-[400px]"
         >
           <div className="space-y-4">
-            <p className="text-gray-600 dark:text-gray-300">
-              삭제된 데이터는 복구할 수 없습니다. 계속하시겠습니까?
-            </p>
             <div className="flex justify-end gap-2">
               <DialogClose asChild>
                 <Button variant="outline" size="sm">

@@ -3,6 +3,7 @@ import HomePage from "./pages/home-page";
 import UIPage from "./pages/ui-page";
 import Header from "./components/header";
 import CustomScrollArea from "./components/ui/scroll-area";
+import { ToastContainer } from "./components/ui/toast";
 
 function App() {
   return (
@@ -13,10 +14,10 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/ui" element={<UIPage />} />
         </Routes>
+        <ToastContainer position="top-center" />
       </CustomScrollArea>
     </BrowserRouter>
   );
 }
 
 export default App;
-
