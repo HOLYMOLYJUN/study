@@ -113,7 +113,7 @@ export default function DialogExample() {
           }
           title="커스텀 스타일 다이얼로그"
           contentClassName="min-w-[500px] bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-300 dark:from-purple-900 dark:to-pink-900 dark:border-purple-600"
-          overlayClassName="bg-black/70"
+          overlayClassName="bg-black/20"
         >
           <div className="space-y-4">
             <p className="text-gray-700 dark:text-gray-200">

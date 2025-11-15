@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import CustomDropdownMenu, { DropdownMenuItem, DropdownMenuSeparator, DropdownMenuLabel } from "@/components/ui/dropdown-menu";
 
 export default function DropdownMenuExample() {
@@ -35,8 +36,8 @@ export default function DropdownMenuExample() {
           open={dropdownOpen}
           onOpenChange={setDropdownOpen}
           trigger={
-            <button className="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600">
-              제어 가능한 메뉴 {dropdownOpen ? "▼" : "▶"}
+            <button className="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600 flex items-center gap-2">
+              제어 가능한 메뉴 {dropdownOpen ? <ChevronUp/> : <ChevronDown/>}
             </button>
           }
           contentClassName="min-w-[200px]"
