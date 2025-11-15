@@ -34,7 +34,8 @@ export default function Header() {
   ];
 
   return (
-    <div className="flex h-[var(--header-height)] w-full items-center justify-between border-b border-gray-300 bg-white px-8 dark:bg-gray-900 dark:text-white dark:border-gray-700">
+    <div className="fixed top-0 left-0 right-0 z-50 flex h-[var(--header-height)] w-full items-center justify-between border-b border-gray-300 bg-white px-8 dark:bg-gray-900 dark:text-white dark:border-gray-700">
+      <div className="container mx-auto flex items-center justify-between w-full">
       {/* 로고 */}
       <div onClick={() => navigate("/")} className="cursor-pointer text-2xl font-bold">
         Study Project
@@ -70,6 +71,7 @@ export default function Header() {
             thumbClassName="block w-5 h-5 rounded-full bg-white transition-transform duration-200 translate-x-0.5 data-[state=checked]:translate-x-[25px]"
           />
         </div>
+      </div>
       </div>
     </div>
   );

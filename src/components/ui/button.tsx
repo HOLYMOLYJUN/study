@@ -14,15 +14,15 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button = forwardRef<HTMLButtonElement, IButtonProps>(
   ({ variant = "primary", size = "md", isLoading = false, children, className = "", disabled, ...props }, ref) => {
-    const baseStyles = "cursor-pointer inline-flex items-center justify-center rounded font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:cursor-default disabled:opacity-50";
+    const baseStyles = "cursor-pointer inline-flex items-center justify-center rounded font-semibold transition-colors focus:outline-none disabled:cursor-default disabled:opacity-50";
 
     const variantStyles = {
-      primary: "bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500 dark:bg-blue-600 dark:hover:bg-blue-700",
-      secondary: "bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-500 dark:bg-gray-600 dark:hover:bg-gray-700",
-      danger: "bg-red-500 text-white hover:bg-red-600 focus:ring-red-500 dark:bg-red-600 dark:hover:bg-red-700",
-      success: "bg-green-500 text-white hover:bg-green-600 focus:ring-green-500 dark:bg-green-600 dark:hover:bg-green-700",
-      outline: "border-2 border-gray-300 bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700",
-      ghost: "bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-500 dark:text-gray-300 dark:hover:bg-gray-700",
+      primary: "bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700",
+      secondary: "bg-gray-500 text-white hover:bg-gray-600  dark:bg-gray-600 dark:hover:bg-gray-700",
+      danger: "bg-red-500 text-white hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700",
+      success: "bg-green-500 text-white hover:bg-green-600  dark:bg-green-600 dark:hover:bg-green-700",
+      outline: "border-2 border-gray-300 bg-transparent text-gray-700 hover:bg-gray-100  dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700",
+      ghost: "bg-transparent text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700",
     };
 
     const sizeStyles = {

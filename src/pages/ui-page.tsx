@@ -11,7 +11,7 @@ import ScrollAreaExample from "@/components/ui/examples/scroll-area-example";
 export default function UIPage() {
   return (
     <PageProvider>
-      <div className="p-8 space-y-8">
+      <div className="container mx-auto px-0 p-8 space-y-8">
         <h1 className="text-3xl font-bold dark:text-white">UI Components</h1>
 
         <SwitchExample />

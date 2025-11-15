@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import CustomDropdownMenu, { DropdownMenuItem, DropdownMenuSeparator, DropdownMenuLabel } from "@/components/ui/dropdown-menu";
+import Button from "@/components/ui/button";
+
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 export default function DropdownMenuExample() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -13,9 +15,9 @@ export default function DropdownMenuExample() {
         {/* 기본 Dropdown Menu */}
         <CustomDropdownMenu
           trigger={
-            <button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+            <Button variant="primary">
               기본 메뉴
-            </button>
+            </Button>
           }
           contentClassName="min-w-[180px]"
         >
@@ -36,9 +38,9 @@ export default function DropdownMenuExample() {
           open={dropdownOpen}
           onOpenChange={setDropdownOpen}
           trigger={
-            <button className="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600 flex items-center gap-2">
-              제어 가능한 메뉴 {dropdownOpen ? <ChevronUp/> : <ChevronDown/>}
-            </button>
+            <Button variant="success" className="flex items-center gap-2">
+              제어 가능한 메뉴 {dropdownOpen ? <ChevronUp /> : <ChevronDown />}
+            </Button>
           }
           contentClassName="min-w-[200px]"
         >
@@ -58,9 +60,9 @@ export default function DropdownMenuExample() {
         <CustomDropdownMenu
           side="right"
           trigger={
-            <button className="rounded bg-purple-500 px-4 py-2 text-white hover:bg-purple-600">
+            <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900/20">
               오른쪽 메뉴
-            </button>
+            </Button>
           }
           contentClassName="min-w-[180px]"
         >
@@ -78,9 +80,9 @@ export default function DropdownMenuExample() {
         {/* 복잡한 Dropdown Menu */}
         <CustomDropdownMenu
           trigger={
-            <button className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600">
+            <Button variant="danger">
               복잡한 메뉴
-            </button>
+            </Button>
           }
           contentClassName="min-w-[220px]"
         >
@@ -115,10 +117,10 @@ export default function DropdownMenuExample() {
         {/* 아이콘과 함께 사용하는 Dropdown Menu */}
         <CustomDropdownMenu
           trigger={
-            <button className="flex items-center gap-2 rounded bg-gray-500 px-4 py-2 text-white hover:bg-gray-600">
+            <Button variant="secondary" className="flex items-center gap-2">
               <span>☰</span>
               <span>더보기</span>
-            </button>
+            </Button>
           }
           contentClassName="min-w-[180px]"
         >

@@ -51,10 +51,9 @@ export default function ButtonExample() {
         <div className="space-y-2">
           <h3 className="text-sm font-semibold text-gray-600 dark:text-gray-400">Combinations</h3>
           <div className="flex flex-wrap items-center gap-3">
-            <Button variant="primary" size="lg">Large Primary</Button>
-            <Button variant="danger" size="sm">Small Danger</Button>
-            <Button variant="outline" size="md">Medium Outline</Button>
-            <Button variant="ghost" size="lg">Large Ghost</Button>
+            <Button variant="outline" size="sm">Small</Button>
+            <Button variant="outline" size="md">Medium</Button>
+            <Button variant="outline" size="lg">Large</Button>
           </div>
         </div>
 

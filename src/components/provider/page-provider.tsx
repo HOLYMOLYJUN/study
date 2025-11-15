@@ -8,6 +8,7 @@ export default function PageProvider({ children, className = "" }: IPageProvider
     min-h-[calc(100dvh-var(--header-height))]
     bg-white
     dark:bg-gray-900
+    pt-[var(--header-height)]
     ${className}
   `}>{children}</div>;
 }

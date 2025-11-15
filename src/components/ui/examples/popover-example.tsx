@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CustomPopover from "@/components/ui/popover";
+import Button from "@/components/ui/button";
 
 export default function PopoverExample() {
   const [popoverOpen, setPopoverOpen] = useState(false);
@@ -12,9 +13,9 @@ export default function PopoverExample() {
         {/* 기본 Popover */}
         <CustomPopover
           trigger={
-            <button className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600">
+            <Button variant="primary">
               기본 Popover
-            </button>
+            </Button>
           }
           contentClassName="rounded-lg bg-white p-4 shadow-lg border border-gray-200 min-w-[200px] dark:bg-gray-800 dark:border-gray-700"
         >
@@ -29,21 +30,23 @@ export default function PopoverExample() {
           open={popoverOpen}
           onOpenChange={setPopoverOpen}
           trigger={
-            <button className="rounded bg-green-500 px-4 py-2 text-white hover:bg-green-600">
+            <Button variant="success">
               제어 가능한 Popover
-            </button>
+            </Button>
           }
           contentClassName="rounded-lg bg-white p-4 shadow-lg border border-gray-200 min-w-[200px] dark:bg-gray-800 dark:border-gray-700"
         >
           <div className="space-y-2">
             <h3 className="font-semibold dark:text-white">제어 가능한 Popover</h3>
             <p className="text-sm text-gray-600 dark:text-gray-300">상태: {popoverOpen ? "열림" : "닫힘"}</p>
-            <button
+            <Button
+              variant="outline"
+              size="sm"
               onClick={() => setPopoverOpen(false)}
-              className="mt-2 rounded bg-gray-200 px-3 py-1 text-sm hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white"
+              className="mt-2"
             >
               닫기
-            </button>
+            </Button>
           </div>
         </CustomPopover>
 
@@ -51,9 +54,9 @@ export default function PopoverExample() {
         <CustomPopover
           side="right"
           trigger={
-            <button className="rounded bg-purple-500 px-4 py-2 text-white hover:bg-purple-600">
+            <Button variant="outline" className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900/20">
               오른쪽 Popover
-            </button>
+            </Button>
           }
           contentClassName="rounded-lg bg-white p-4 shadow-lg border border-gray-200 min-w-[200px] dark:bg-gray-800 dark:border-gray-700"
         >
@@ -66,9 +69,9 @@ export default function PopoverExample() {
         {/* 커스텀 스타일 Popover */}
         <CustomPopover
           trigger={
-            <button className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600">
+            <Button variant="danger">
               커스텀 스타일
-            </button>
+            </Button>
           }
           contentClassName="rounded-xl bg-gradient-to-br from-pink-100 to-purple-100 p-6 shadow-xl border-2 border-purple-300 min-w-[250px] dark:from-pink-900 dark:to-purple-900 dark:border-purple-600"
         >
@@ -76,12 +79,12 @@ export default function PopoverExample() {
             <h3 className="text-lg font-bold text-purple-800 dark:text-purple-200">커스텀 스타일</h3>
             <p className="text-sm text-purple-700 dark:text-purple-300">그라데이션 배경과 커스텀 스타일을 적용했습니다.</p>
             <div className="flex gap-2">
-              <button className="rounded bg-purple-500 px-3 py-1 text-sm text-white hover:bg-purple-600">
+              <Button variant="outline" size="sm" className="border-purple-500 text-purple-500 hover:bg-purple-50 dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-900/20">
                 확인
-              </button>
-              <button className="rounded bg-gray-200 px-3 py-1 text-sm hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white">
+              </Button>
+              <Button variant="outline" size="sm">
                 취소
-              </button>
+              </Button>
             </div>
           </div>
         </CustomPopover>
